@@ -553,6 +553,8 @@ let currentTheme = localStorage.getItem('theme') || 'dark';
 let booted = false;
 let standardConfigs = [];
 let protocolPayload = null;
+let configFetchCompleted = false;
+let infoFetchCompleted = false;
 
 const PROTOCOL_TITLES = {
   ov:'OpenVPN', openvpn:'OpenVPN', ovpn:'OpenVPN',
@@ -571,10 +573,10 @@ function init() {
   renderUserSummary();
   if (!booted) {
     booted = true;
-    fetchConfigs();
-    fetchProtocolInfo();
+    Promise.allSettled([fetchConfigs(), fetchProtocolInfo()]).finally(finalizeConfigRendering);
   } else {
-    renderConfigList(standardConfigs);
+    // Never replace an already rendered configuration list with an empty state.
+    if (standardConfigs.length) renderConfigList(standardConfigs);
     if (protocolPayload) renderProtocolPayload(protocolPayload);
   }
 }
@@ -643,19 +645,31 @@ function uniqueStrings(values){
 }
 
 async function fetchConfigs(){
-  const container=document.getElementById('config-list');
   try{
     const r=await fetch(baseSubscriptionUrl(),{headers:{'Accept':'text/plain,*/*;q=0.8'},credentials:'same-origin',cache:'no-store'});
     if(!r.ok) throw new Error(`HTTP ${r.status}`);
     const contentType=(r.headers.get('content-type')||'').toLowerCase();
     const txt=await r.text();
     if(contentType.includes('application/json') || txt.trim().startsWith('{')){
-      try{ protocolPayload=JSON.parse(txt); renderProtocolPayload(protocolPayload); ingestUserLinks(protocolPayload); return; }catch(_){}
+      try{
+        protocolPayload=JSON.parse(txt);
+        renderProtocolPayload(protocolPayload);
+        ingestUserLinks(protocolPayload);
+        return;
+      }catch(_){}
     }
     const decoded=decodeBase64Text(txt);
-    standardConfigs=uniqueStrings(decoded.split(/\r?\n/).filter(x=>CONFIG_SCHEMES.test(x.trim())));
-    renderConfigList(standardConfigs);
-  }catch(_){ container.innerHTML=`<div class="protocol-error">${escapeHtml(i18n[currentLang].load_error)}</div>`; }
+    const found=uniqueStrings(decoded.split(/\r?\n/).filter(x=>CONFIG_SCHEMES.test(x.trim())));
+    // Merge results instead of assigning an empty array over a valid list.
+    if(found.length){
+      standardConfigs=uniqueStrings([...standardConfigs,...found]);
+      renderConfigList(standardConfigs);
+    }
+  }catch(_){
+    // Do not erase configurations already obtained from /info or a previous response.
+  }finally{
+    configFetchCompleted=true;
+  }
 }
 
 async function fetchProtocolInfo(){
@@ -668,7 +682,21 @@ async function fetchProtocolInfo(){
     renderProtocolPayload(payload);
   }catch(_){
     // Older Rebecca releases return no extra protocol payload. Keep the section hidden.
+  }finally{
+    infoFetchCompleted=true;
   }
+}
+
+function finalizeConfigRendering(){
+  const container=document.getElementById('config-list');
+  if(!container) return;
+  if(standardConfigs.length){
+    renderConfigList(standardConfigs);
+    return;
+  }
+  // A late/empty request must not wipe a card that has already been rendered.
+  if(container.querySelector('.config-card')) return;
+  if(configFetchCompleted && infoFetchCompleted) renderConfigList([],true);
 }
 function ingestUserLinks(payload){
   const user=(payload && payload.user && typeof payload.user==='object')?payload.user:payload;
@@ -679,11 +707,17 @@ function ingestUserLinks(payload){
   if(configs.length){ standardConfigs=uniqueStrings([...standardConfigs,...configs]); renderConfigList(standardConfigs); }
 }
 
-function renderConfigList(lines){
+function renderConfigList(lines,forceEmpty=false){
   const container=document.getElementById('config-list');
-  container.innerHTML='';
+  if(!container) return;
   const safe=uniqueStrings(lines||[]);
-  if(!safe.length){ container.innerHTML=`<div class="protocol-empty">${escapeHtml(i18n[currentLang].no_configs)}</div>`; return; }
+  // Empty asynchronous responses are ignored unless every source has finished.
+  if(!safe.length){
+    if(!forceEmpty) return;
+    container.innerHTML=`<div class="protocol-empty">${escapeHtml(i18n[currentLang].no_configs)}</div>`;
+    return;
+  }
+  container.innerHTML='';
   safe.forEach((line,i)=>{
     let proto=(line.split('://')[0]||'CFG').toUpperCase(), name=`Config ${i+1}`;
     if(line.includes('#')){ try{ name=decodeURIComponent(line.split('#').pop()); }catch(_){} }
