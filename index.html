@@ -492,7 +492,7 @@ body:not(.lang-en):not(.lang-ru) .protocol-download-main{direction:rtl}
       <i class="ri-arrow-down-s-line toggle-arrow"></i>
     </div>
     <div id="vpn-protocol-area" class="section-content open">
-      <p class="protocol-intro" data-translate="vpn_hint">پروتکل‌های فعال حساب شما و فایل دانلود هر سرویس</p>
+      <p class="protocol-intro" data-translate="vpn_hint">فقط پروتکل‌های فعال حساب شما؛ فایل‌های قابل دانلود یا اطلاعات اتصال</p>
       <div id="vpn-protocol-list">
         <div class="protocol-empty"><i class="ri-loader-4-line"></i></div>
       </div>
@@ -546,10 +546,10 @@ body:not(.lang-en):not(.lang-ru) .protocol-download-main{direction:rtl}
    TRANSLATIONS
    ═══════════════════════════════════════ */
 const i18n = {
-  fa: { active:"فعال", limited:"محدود شده", expired:"منقضی", disabled:"غیرفعال", pending:"در انتظار", unlimited:"حجم نامحدود", days:"روز", remaining:"باقی‌مانده", copy_link:"کپی لینک اشتراک", connections:"کانکشن‌ها", copy_all:"کپی همه کانفیگ‌ها", downloads:"دانلود برنامه‌ها", copied:"کپی شد!", scan:"اسکن کنید", vpn_protocols:"سرویس‌های VPN", vpn_hint:"پروتکل‌های فعال حساب شما و فایل دانلود هر سرویس", download:"دانلود", credentials:"اطلاعات اتصال", files:"فایل", items:"مورد", no_configs:"کانفیگی یافت نشد", load_error:"خطا در بارگذاری", dir:"rtl" },
-  en: { active:"Active", limited:"Limited", expired:"Expired", disabled:"Disabled", pending:"Pending", unlimited:"Unlimited Data", days:"Days", remaining:"Remaining", copy_link:"Copy Subscription", connections:"Connections", copy_all:"Copy All Configs", downloads:"Downloads", copied:"Copied!", scan:"Scan QR", vpn_protocols:"VPN Services", vpn_hint:"Enabled protocols and their direct download files", download:"Download", credentials:"Connection details", files:"File", items:"items", no_configs:"No configuration found", load_error:"Failed to load", dir:"ltr" },
-  ru: { active:"Активный", limited:"Лимит", expired:"Истек", disabled:"Отключено", pending:"В ожидании", unlimited:"Безлимит", days:"дней", remaining:"Осталось", copy_link:"Ссылка подписки", connections:"Конфигурации", copy_all:"Копировать все", downloads:"Приложения", copied:"Скопировано!", scan:"QR-код", vpn_protocols:"VPN-сервисы", vpn_hint:"Активные протоколы и прямые файлы загрузки", download:"Скачать", credentials:"Данные подключения", files:"Файл", items:"элементов", no_configs:"Конфигурации не найдены", load_error:"Ошибка загрузки", dir:"ltr" },
-  ar: { active:"نشط", limited:"محدود", expired:"منتهية", disabled:"معطل", pending:"قيد الانتظار", unlimited:"بيانات غير محدودة", days:"أيام", remaining:"متبقي", copy_link:"نسخ الرابط", connections:"الاتصالات", copy_all:"نسخ الكل", downloads:"تنزيل", copied:"تم النسخ!", scan:"مسح QR", vpn_protocols:"خدمات VPN", vpn_hint:"البروتوكولات المفعلة وملفات التنزيل المباشر", download:"تنزيل", credentials:"بيانات الاتصال", files:"ملف", items:"عناصر", no_configs:"لم يتم العثور على إعدادات", load_error:"فشل التحميل", dir:"rtl" }
+  fa: { active:"فعال", limited:"محدود شده", expired:"منقضی", disabled:"غیرفعال", pending:"در انتظار", unlimited:"حجم نامحدود", days:"روز", remaining:"باقی‌مانده", copy_link:"کپی لینک اشتراک", connections:"کانکشن‌ها", copy_all:"کپی همه کانفیگ‌ها", downloads:"دانلود برنامه‌ها", copied:"کپی شد!", scan:"اسکن کنید", vpn_protocols:"سرویس‌های VPN", vpn_hint:"فقط پروتکل‌های فعال حساب شما؛ فایل‌های قابل دانلود یا اطلاعات اتصال", download:"دانلود", credentials:"اطلاعات اتصال", files:"فایل", items:"مورد", no_configs:"کانفیگی یافت نشد", load_error:"خطا در بارگذاری", dir:"rtl" },
+  en: { active:"Active", limited:"Limited", expired:"Expired", disabled:"Disabled", pending:"Pending", unlimited:"Unlimited Data", days:"Days", remaining:"Remaining", copy_link:"Copy Subscription", connections:"Connections", copy_all:"Copy All Configs", downloads:"Downloads", copied:"Copied!", scan:"Scan QR", vpn_protocols:"VPN Services", vpn_hint:"Only enabled protocols; downloadable files or connection details", download:"Download", credentials:"Connection details", files:"File", items:"items", no_configs:"No configuration found", load_error:"Failed to load", dir:"ltr" },
+  ru: { active:"Активный", limited:"Лимит", expired:"Истек", disabled:"Отключено", pending:"В ожидании", unlimited:"Безлимит", days:"дней", remaining:"Осталось", copy_link:"Ссылка подписки", connections:"Конфигурации", copy_all:"Копировать все", downloads:"Приложения", copied:"Скопировано!", scan:"QR-код", vpn_protocols:"VPN-сервисы", vpn_hint:"Только активные протоколы: файлы или данные подключения", download:"Скачать", credentials:"Данные подключения", files:"Файл", items:"элементов", no_configs:"Конфигурации не найдены", load_error:"Ошибка загрузки", dir:"ltr" },
+  ar: { active:"نشط", limited:"محدود", expired:"منتهية", disabled:"معطل", pending:"قيد الانتظار", unlimited:"بيانات غير محدودة", days:"أيام", remaining:"متبقي", copy_link:"نسخ الرابط", connections:"الاتصالات", copy_all:"نسخ الكل", downloads:"تنزيل", copied:"تم النسخ!", scan:"مسح QR", vpn_protocols:"خدمات VPN", vpn_hint:"البروتوكولات المفعلة فقط: ملفات أو بيانات الاتصال", download:"تنزيل", credentials:"بيانات الاتصال", files:"ملف", items:"عناصر", no_configs:"لم يتم العثور على إعدادات", load_error:"فشل التحميل", dir:"rtl" }
 };
 const supportedLangs = ['fa','en','ru','ar'];
 const core = document.getElementById('data-core').dataset;
@@ -568,9 +568,22 @@ const PROTOCOL_TITLES = {
   wireguard:'WireGuard', wg:'WireGuard', pptp:'PPTP', sstp:'SSTP',
   softether:'SoftEther', shadowsocks:'Shadowsocks'
 };
-const META_KEYS = new Set(['user','usage','usage_url','support_url','token','subscription_url','subscription_urls','profile','status','message','detail']);
+const META_KEYS = new Set([
+  'user','usage','usage_url','support_url','token','subscription_url','subscription_urls','profile','status','message','detail',
+  'username','used_traffic','lifetime_used_traffic','data_limit','expire','created_at','online_at','service_id','service_name',
+  'admin_id','admin_username','links','link_data','credentials','proxies','inbounds','excluded_inbounds','service_host_orders',
+  'subadress','credential_key','ip_limit','flow','note','next_plan','next_plans','auto_delete_in_days','on_hold_timeout',
+  'on_hold_expire_duration','data_limit_reset_strategy','last_status_change','admin','id'
+]);
+const PROTOCOL_WRAPPER_KEYS = new Set(['protocols','vpn','vpn_protocols','services','connections']);
+const DOWNLOAD_CONTAINER_KEYS = new Set(['downloads','download','files','profiles','certificates']);
+const CREDENTIAL_ONLY_PROTOCOLS = new Set([
+  'l2tp','l2tp_ipsec','ipsec','ikev2','anyconnect','any_connect','ocserv','openconnect','oc','cisco','pptp'
+]);
 const CONFIG_SCHEMES = /^(vmess|vless|trojan|ss|ssr|hysteria|hysteria2|hy2|tuic|wireguard|wg|socks|socks5|http|https):\/\//i;
 const FILE_EXTENSIONS = /\.(ovpn|mobileconfig|conf|pcf|xml|json|txt|zip|vpn|cer|crt|pem|p12|pfx)(?:[?#].*)?$/i;
+const CREDENTIAL_FIELD_RE = /(server|host|address|ip|domain|remote|gateway|username|user|login|password|pass|secret|psk|pre[_-]?shared|group|realm|port|pin|token|certificate|cert)/i;
+const HIDDEN_PROTOCOL_FIELD_RE = /^(inbound|inbounds|tag|tags|service[_-]?id|serviceid|id|type|protocol|enabled|active|status|name|title|remark|note|created[_-]?at|updated[_-]?at)$/i;
 
 function init() {
   setTheme(currentTheme);
@@ -657,9 +670,10 @@ async function fetchConfigs(){
     const txt=await r.text();
     if(contentType.includes('application/json') || txt.trim().startsWith('{')){
       try{
-        protocolPayload=JSON.parse(txt);
+        const parsed=JSON.parse(txt);
+        protocolPayload=mergeProtocolPayload(protocolPayload,parsed);
         renderProtocolPayload(protocolPayload);
-        ingestUserLinks(protocolPayload);
+        ingestUserLinks(parsed);
         return;
       }catch(_){}
     }
@@ -682,9 +696,9 @@ async function fetchProtocolInfo(){
     const r=await fetch(buildInfoUrl(),{headers:{'Accept':'application/json'},credentials:'same-origin',cache:'no-store'});
     if(!r.ok) throw new Error(`HTTP ${r.status}`);
     const payload=await r.json();
-    protocolPayload=payload;
+    protocolPayload=mergeProtocolPayload(protocolPayload,payload);
     ingestUserLinks(payload);
-    renderProtocolPayload(payload);
+    renderProtocolPayload(protocolPayload);
   }catch(_){
     // Older Rebecca releases return no extra protocol payload. Keep the section hidden.
   }finally{
@@ -747,64 +761,151 @@ function renderProtocolPayload(payload){
   section.hidden=false;
   groups.forEach(group=>container.appendChild(buildProtocolGroup(group)));
 }
-function extractProtocolGroups(payload){
-  if(!payload || typeof payload!=='object') return [];
-  const groups=[];
-  Object.entries(payload).forEach(([key,value])=>{
-    if(value==null) return;
-    const normalized=String(key).toLowerCase().replace(/[\s-]+/g,'_');
-    if(META_KEYS.has(normalized)) return;
 
-    // Rebecca Binary exposes the new services as top-level protocol objects.
-    // Only known protocol names, or top-level objects with an explicit
-    // downloads/files list, are rendered. Internal keys such as inbound,
-    // tag, service_id and other implementation details are intentionally ignored.
-    const knownProtocol=Object.prototype.hasOwnProperty.call(PROTOCOL_TITLES,normalized);
-    const explicitDownloads=hasExplicitDownloadContainer(value);
-    if(!knownProtocol && !explicitDownloads) return;
+function normalizeProtocolKey(key){
+  return String(key||'').trim().toLowerCase().replace(/[\s-]+/g,'_');
+}
+
+function isDirectUserInfoPayload(payload){
+  return !!(payload && typeof payload==='object' && !Array.isArray(payload) && !payload.user &&
+    typeof payload.username==='string' &&
+    ('used_traffic' in payload || 'subscription_url' in payload || 'proxies' in payload || 'links' in payload));
+}
+
+function extractProtocolEnvelope(payload){
+  if(!payload || typeof payload!=='object' || Array.isArray(payload)) return {};
+
+  for(const wrapper of PROTOCOL_WRAPPER_KEYS){
+    const value=payload[wrapper];
+    if(value && typeof value==='object' && !Array.isArray(value)) return value;
+  }
+
+  // The Rebecca Binary subscription JSON currently has this shape:
+  // { "ov": {...}, "l2tp": [...], "user": {...} }
+  // In that form every non-metadata top-level key is a protocol, including
+  // future protocol names that this template does not know yet.
+  if(payload.user && typeof payload.user==='object'){
+    return Object.fromEntries(Object.entries(payload).filter(([key])=>!META_KEYS.has(normalizeProtocolKey(key))));
+  }
+
+  // /info is a normal UserResponse. It must never be interpreted as a list of
+  // VPN protocols, otherwise user fields such as service_id or proxies appear.
+  if(isDirectUserInfoPayload(payload)) return {};
+
+  return Object.fromEntries(Object.entries(payload).filter(([key])=>!META_KEYS.has(normalizeProtocolKey(key))));
+}
+
+function mergeProtocolPayload(current,incoming){
+  const base=(current && typeof current==='object' && !Array.isArray(current))?current:{};
+  const next=extractProtocolEnvelope(incoming);
+  return Object.assign({},base,next);
+}
+
+function disabledFlag(value){
+  if(value===false || value===0) return true;
+  if(typeof value==='string') return /^(false|0|off|disabled|inactive|deactive)$/i.test(value.trim());
+  return false;
+}
+
+function hasMeaningfulProtocolValue(value){
+  if(value==null || disabledFlag(value)) return false;
+  if(typeof value==='string') return value.trim()!=='';
+  if(typeof value==='number') return value!==0;
+  if(typeof value==='boolean') return value;
+  if(Array.isArray(value)) return value.some(hasMeaningfulProtocolValue);
+  if(typeof value==='object'){
+    if('enabled' in value && disabledFlag(value.enabled)) return false;
+    if('active' in value && disabledFlag(value.active)) return false;
+    if('status' in value && disabledFlag(value.status)) return false;
+    return Object.entries(value).some(([key,child])=>{
+      const normalized=normalizeProtocolKey(key);
+      if(['enabled','active','status'].includes(normalized)) return false;
+      return hasMeaningfulProtocolValue(child);
+    });
+  }
+  return false;
+}
+
+function extractProtocolGroups(payload){
+  const envelope=extractProtocolEnvelope(payload);
+  const groups=[];
+  Object.entries(envelope).forEach(([key,value])=>{
+    const normalized=normalizeProtocolKey(key);
+    if(META_KEYS.has(normalized) || PROTOCOL_WRAPPER_KEYS.has(normalized)) return;
+    // Empty arrays/objects and explicitly disabled protocols are not shown.
+    if(!hasMeaningfulProtocolValue(value)) return;
 
     const downloads=[];
-    collectDownloadEntries(value,[key],downloads,false);
-    const deduped=dedupeDownloadEntries(downloads);
+    const records=[];
+    const credentialOnly=CREDENTIAL_ONLY_PROTOCOLS.has(normalized);
+    collectProtocolContent(value,[key],downloads,records,false,credentialOnly);
 
-    // Keep a known protocol visible even when it currently has no downloadable file,
-    // so the subscriber can still see which service is enabled.
-    if(knownProtocol || deduped.length){
-      groups.push({key:normalized,title:protocolTitle(normalized),downloads:deduped});
-    }
+    groups.push({
+      key:normalized,
+      title:protocolTitle(key),
+      downloads:credentialOnly?[]:dedupeDownloadEntries(downloads),
+      records:dedupeCredentialRecords(records),
+      credentialOnly
+    });
   });
   return groups;
 }
-function hasExplicitDownloadContainer(value){
-  if(!value || typeof value!=='object') return false;
-  if(Array.isArray(value)) return value.some(hasExplicitDownloadContainer);
-  return Object.entries(value).some(([key,child])=>{
-    const normalized=String(key).toLowerCase().replace(/[\s-]+/g,'_');
-    if(['downloads','download','files','profiles','certificates'].includes(normalized)) return true;
-    return child && typeof child==='object' ? hasExplicitDownloadContainer(child) : false;
-  });
-}
-function collectDownloadEntries(value,path,entries,insideDownloads){
-  if(value==null || value==='') return;
-  const leaf=String(path[path.length-1]||'').toLowerCase().replace(/[\s-]+/g,'_');
-  const downloadContext=insideDownloads || ['downloads','download','files','profiles','certificates'].includes(leaf);
 
-  if(typeof value==='string'){
-    const url=value.trim();
-    if(!url || !isHttpUrl(url)) return;
-    if(downloadContext || FILE_EXTENSIONS.test(url) || /\/(ov|openvpn|l2tp|ipsec|anyconnect|openconnect|ocserv|wireguard|wg|sstp|pptp)\//i.test(url)){
-      entries.push({url});
+function collectProtocolContent(value,path,downloads,records,insideDownloads,credentialOnly){
+  if(value==null || value==='' || disabledFlag(value)) return;
+  const leaf=normalizeProtocolKey(path[path.length-1]);
+  const downloadContext=insideDownloads || DOWNLOAD_CONTAINER_KEYS.has(leaf);
+
+  if(typeof value==='string' || typeof value==='number' || typeof value==='boolean'){
+    const text=String(value).trim();
+    if(!text) return;
+    if(!credentialOnly && typeof value==='string' && isHttpUrl(text) && (downloadContext || FILE_EXTENSIONS.test(text))){
+      downloads.push({url:text});
+      return;
+    }
+    const fieldKey=String(path[path.length-1]||'value');
+    if(CREDENTIAL_FIELD_RE.test(fieldKey) && !HIDDEN_PROTOCOL_FIELD_RE.test(normalizeProtocolKey(fieldKey))){
+      records.push({fields:[{key:fieldKey,value:text}]});
     }
     return;
   }
+
   if(Array.isArray(value)){
-    value.forEach((item,index)=>collectDownloadEntries(item,[...path,String(index+1)],entries,downloadContext));
+    value.forEach((item,index)=>collectProtocolContent(item,[...path,String(index+1)],downloads,records,downloadContext,credentialOnly));
     return;
   }
+
   if(typeof value==='object'){
-    Object.entries(value).forEach(([key,child])=>collectDownloadEntries(child,[...path,key],entries,downloadContext));
+    if('enabled' in value && disabledFlag(value.enabled)) return;
+    if('active' in value && disabledFlag(value.active)) return;
+    if('status' in value && disabledFlag(value.status)) return;
+
+    const fields=credentialFields(value);
+    if(fields.length) records.push({fields});
+
+    Object.entries(value).forEach(([key,child])=>{
+      const normalized=normalizeProtocolKey(key);
+      if(['enabled','active','status'].includes(normalized)) return;
+      if(fields.some(field=>field.key===key)) return;
+      // Internal implementation fields must not leak into the subscription page.
+      if(HIDDEN_PROTOCOL_FIELD_RE.test(normalized)) return;
+      collectProtocolContent(child,[...path,key],downloads,records,downloadContext,credentialOnly);
+    });
   }
 }
+
+function credentialFields(obj){
+  if(!obj || Array.isArray(obj) || typeof obj!=='object') return [];
+  return Object.entries(obj)
+    .filter(([key,value])=>{
+      if(value==null || !['string','number','boolean'].includes(typeof value)) return false;
+      if(String(value).trim()==='') return false;
+      const normalized=normalizeProtocolKey(key);
+      return CREDENTIAL_FIELD_RE.test(key) && !HIDDEN_PROTOCOL_FIELD_RE.test(normalized);
+    })
+    .map(([key,value])=>({key,value:String(value)}));
+}
+
 function dedupeDownloadEntries(entries){
   const seen=new Set();
   return entries.filter(entry=>{
@@ -814,8 +915,22 @@ function dedupeDownloadEntries(entries){
     return true;
   });
 }
+
+function dedupeCredentialRecords(records){
+  const seen=new Set();
+  return records
+    .map(record=>({fields:record.fields.filter((field,index,all)=>all.findIndex(x=>x.key===field.key && x.value===field.value)===index)}))
+    .filter(record=>record.fields.length)
+    .filter(record=>{
+      const signature=JSON.stringify(record.fields);
+      if(seen.has(signature)) return false;
+      seen.add(signature);
+      return true;
+    });
+}
+
 function protocolTitle(key){
-  const normalized=String(key).toLowerCase().replace(/[\s-]+/g,'_');
+  const normalized=normalizeProtocolKey(key);
   return PROTOCOL_TITLES[normalized] || String(key).replace(/[_-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
 }
 function isHttpUrl(v){ return /^https?:\/\//i.test(v); }
@@ -828,13 +943,36 @@ function buildProtocolGroup(group){
   const title=document.createElement('div'); title.className='protocol-name'; title.textContent=group.title;
   main.append(badge,title); head.appendChild(main); box.appendChild(head);
 
-  if(group.downloads.length){
+  if(group.records.length || group.downloads.length){
     const items=document.createElement('div'); items.className='protocol-items';
+    group.records.forEach((record,index)=>items.appendChild(buildCredentialRecord(record,index)));
     group.downloads.forEach((entry,index)=>items.appendChild(buildProtocolDownload(entry,group,index)));
     box.appendChild(items);
   }
   return box;
 }
+
+function buildCredentialRecord(record,index){
+  const item=document.createElement('div'); item.className='vpn-item';
+  const top=document.createElement('div'); top.className='vpn-item-top';
+  const title=document.createElement('div'); title.className='vpn-item-title';
+  title.textContent=record.fields.length>1
+    ? `${i18n[currentLang].credentials}${index?` ${index+1}`:''}`
+    : credentialLabel(record.fields[0].key);
+  top.appendChild(title); item.appendChild(top);
+
+  const grid=document.createElement('div'); grid.className='credential-grid';
+  record.fields.forEach(field=>{
+    const row=document.createElement('div'); row.className='credential-row';
+    const key=document.createElement('div'); key.className='credential-key'; key.textContent=credentialLabel(field.key);
+    const val=document.createElement('div'); val.className='credential-value'; val.textContent=field.value; val.title=field.value;
+    const copy=document.createElement('button'); copy.type='button'; copy.className='mini-copy'; copy.innerHTML='<i class="ri-file-copy-line"></i>'; copy.addEventListener('click',()=>copyTxt(field.value));
+    row.append(key,val,copy); grid.appendChild(row);
+  });
+  item.appendChild(grid);
+  return item;
+}
+
 function buildProtocolDownload(entry,group,index){
   const link=document.createElement('a');
   link.className='btn btn-gold protocol-download-main';
@@ -851,6 +989,18 @@ function buildProtocolDownload(entry,group,index){
   link.append(icon,label);
   return link;
 }
+
+function credentialLabel(key){
+  const k=normalizeProtocolKey(key);
+  const labels={
+    fa:{server:'سرور / IP',host:'سرور / IP',address:'آدرس',ip:'IP',domain:'دامنه',remote:'سرور',gateway:'دروازه',username:'نام کاربری',user:'نام کاربری',login:'نام کاربری',password:'رمز عبور',pass:'رمز عبور',secret:'کلید مشترک',psk:'کلید مشترک (PSK)',pre_shared_key:'کلید مشترک (PSK)',presharedkey:'کلید مشترک (PSK)',port:'پورت',group:'گروه',realm:'Realm',pin:'PIN',token:'Token',certificate:'گواهی',cert:'گواهی'},
+    en:{server:'Server / IP',host:'Server / IP',address:'Address',ip:'IP',domain:'Domain',remote:'Server',gateway:'Gateway',username:'Username',user:'Username',login:'Username',password:'Password',pass:'Password',secret:'Shared secret',psk:'Pre-shared key (PSK)',pre_shared_key:'Pre-shared key (PSK)',presharedkey:'Pre-shared key (PSK)',port:'Port',group:'Group',realm:'Realm',pin:'PIN',token:'Token',certificate:'Certificate',cert:'Certificate'},
+    ru:{server:'Сервер / IP',host:'Сервер / IP',address:'Адрес',ip:'IP',domain:'Домен',remote:'Сервер',gateway:'Шлюз',username:'Логин',user:'Логин',login:'Логин',password:'Пароль',pass:'Пароль',secret:'Общий секрет',psk:'PSK',pre_shared_key:'PSK',presharedkey:'PSK',port:'Порт',group:'Группа',realm:'Realm',pin:'PIN',token:'Token',certificate:'Сертификат',cert:'Сертификат'},
+    ar:{server:'الخادم / IP',host:'الخادم / IP',address:'العنوان',ip:'IP',domain:'النطاق',remote:'الخادم',gateway:'البوابة',username:'اسم المستخدم',user:'اسم المستخدم',login:'اسم المستخدم',password:'كلمة المرور',pass:'كلمة المرور',secret:'المفتاح المشترك',psk:'المفتاح المشترك (PSK)',pre_shared_key:'المفتاح المشترك (PSK)',presharedkey:'المفتاح المشترك (PSK)',port:'المنفذ',group:'المجموعة',realm:'Realm',pin:'PIN',token:'Token',certificate:'الشهادة',cert:'الشهادة'}
+  };
+  return (labels[currentLang]&&labels[currentLang][k]) || humanizeKey(key);
+}
+
 function protocolBadge(title){
   const words=String(title).replace(/[^A-Za-z0-9]+/g,' ').trim().split(/\s+/).filter(Boolean);
   if(!words.length) return 'VPN';
